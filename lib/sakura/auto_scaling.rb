@@ -2,19 +2,20 @@ require 'saklient/cloud/api'
 require 'ipaddr'
 require 'yaml'
 
-# Autoscaling demo.
+# Autoscaling service.
 # @author SAKURA Internet Inc.
-# @see https://github.com/sakura-internet/saklient-autoscaling-demo
-class AutoScalingDemo
+# @see https://github.com/nattogo/saklient-autoscaling-demo
+# @fork https://github.com/sakura-internet/saklient-autoscaling-demo
+class AutoScaling
   def initialize
     @config            = YAML.load_file(File.expand_path('../../../config/config.yml', __FILE__))
     @api               = Saklient::Cloud::API.authorize(@config['token'], @config['secret'], @config['zone'])
-    @tag               = 'autoscaling-demo'
-    @min_servers_count = 1
-    @max_servers_count = 5
-    @monitor_interval  = 300 # seconds
-    @cpu_time_scale_out_threshold = 0.4
-    @cpu_time_scale_in_threshold  = 0.2
+    @tag               = 'sakura-autoscaling'
+    @min_servers_count = @config['min_servers_count']
+    @max_servers_count = @config['max_servers_count']
+    @monitor_interval  = @config['monitor_interval'] # seconds
+    @cpu_time_scale_out_threshold = @config['cpu_time_scale_out_threshold']
+    @cpu_time_scale_in_threshold  = @config['cpu_time_scale_in_threshold']
   end
 
   def run

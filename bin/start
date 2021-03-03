@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require File.expand_path('../../lib/sakura/auto_scaling', __FILE__)
+
+AutoScaling.new.run

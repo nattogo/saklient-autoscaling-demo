@@ -88,7 +88,7 @@ Gemfile.lock
 .rvmrc
 
 # config
-config/config.yml
+#config/config.yml
 
 # others
 src/test.rb

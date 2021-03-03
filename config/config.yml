@@ -1,0 +1,19 @@
+#token: your-token
+#secret: your-token-secret
+
+# zone
+# tk1a(tokyo1), is1a(Ishikari1), is1b(Ishikari2), tk1v(Sandbox)
+#zone: tk1a
+
+# server id
+#base_server_id: '999999999999'
+#swich id
+#swytch_id: '999999999999'
+#loadbalancer id
+#lb_id: '999999999999'
+
+#min_servers_count: 1
+#min_servers_count: 3
+#monitor_interval: 300
+#cpu_time_scale_out_threshold: 0.4
+#cpu_time_scale_in_threshold: 0.2
